@@ -1,0 +1,231 @@
+/* ── Phone mockup wrapper ── */
+.prev {
+  width: 100%;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  font-family: var(--font-serif);
+  box-shadow: 0 4px 24px rgba(0,0,0,.12);
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Cover ── */
+.prev__cover {
+  position: relative;
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 24px 20px;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+
+.prev__cover-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,.15) 0%, rgba(0,0,0,.65) 100%);
+}
+
+.prev__quote {
+  position: relative;
+  z-index: 1;
+  font-size: 11px;
+  color: rgba(255,255,255,.8);
+  font-style: italic;
+  max-width: 220px;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.prev__names {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.prev__groom,
+.prev__bride {
+  font-size: 26px;
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.prev__amp {
+  font-size: 18px;
+  color: var(--color-rose-light);
+  font-style: italic;
+  line-height: 1.2;
+}
+
+.prev__date-chip {
+  position: relative;
+  z-index: 1;
+  margin-top: 14px;
+  background: rgba(200,149,108,.25);
+  border: 1px solid rgba(200,149,108,.5);
+  color: var(--color-rose-light);
+  padding: 5px 14px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-family: var(--font-sans);
+  letter-spacing: .04em;
+}
+
+/* ── Sections ── */
+.prev__section {
+  padding: 24px 20px;
+  border-bottom: 1px solid var(--color-border);
+  text-align: center;
+}
+
+.prev__section--dark {
+  background: var(--color-navy);
+  border-bottom: none;
+}
+
+.prev__section-label {
+  font-size: 10px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 6px;
+  font-family: var(--font-sans);
+}
+
+.prev__section-title {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--color-navy);
+  margin-bottom: 16px;
+}
+
+.prev__section-title--light {
+  color: rgba(255,255,255,.9);
+}
+
+/* ── Couple ── */
+.prev__couple {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  justify-content: center;
+}
+
+.prev__person {
+  flex: 1;
+  max-width: 140px;
+}
+
+.prev__person-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-navy);
+  margin-bottom: 4px;
+}
+
+.prev__person-parents {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  font-family: var(--font-sans);
+  line-height: 1.4;
+}
+
+.prev__couple-sep {
+  color: var(--color-rose);
+  font-size: 20px;
+  padding-top: 4px;
+  flex-shrink: 0;
+}
+
+/* ── Events ── */
+.prev__event {
+  text-align: center;
+}
+
+.prev__event-label {
+  font-size: 10px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--color-rose-light);
+  font-family: var(--font-sans);
+  margin-bottom: 6px;
+}
+
+.prev__event-date {
+  font-size: 15px;
+  color: #fff;
+  font-weight: 500;
+  margin-bottom: 3px;
+}
+
+.prev__event-time {
+  font-size: 12px;
+  color: rgba(255,255,255,.75);
+  font-family: var(--font-sans);
+}
+
+.prev__event-venue {
+  font-size: 13px;
+  color: rgba(255,255,255,.9);
+  font-weight: 500;
+  margin-top: 6px;
+}
+
+.prev__event-addr {
+  font-size: 11px;
+  color: rgba(255,255,255,.6);
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  margin-top: 4px;
+}
+
+.prev__maps-btn {
+  display: inline-block;
+  margin-top: 10px;
+  background: rgba(200,149,108,.2);
+  border: 1px solid rgba(200,149,108,.4);
+  color: var(--color-rose-light);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-family: var(--font-sans);
+  text-decoration: none;
+  min-height: unset;
+}
+
+.prev__event-sep {
+  height: 1px;
+  background: rgba(255,255,255,.1);
+  margin: 20px 0;
+}
+
+/* ── Love story ── */
+.prev__love-story {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  font-family: var(--font-sans);
+  line-height: 1.75;
+  white-space: pre-wrap;
+  text-align: left;
+}
+
+/* ── Footer ── */
+.prev__footer {
+  margin-top: auto;
+  padding: 16px;
+  text-align: center;
+  font-size: 11px;
+  color: var(--color-text-muted);
+  font-family: var(--font-sans);
+  border-top: 1px solid var(--color-border);
+}

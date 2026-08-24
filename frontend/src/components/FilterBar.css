@@ -1,0 +1,141 @@
+.filterbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 36px 16px 28px;
+  width: 100%;
+  /* Cegah overflow horizontal */
+  overflow: hidden;
+}
+
+/* ── Toggle Dengan Foto / Tanpa Foto ── */
+.filterbar__photo-toggle {
+  display: flex;
+  background: #EDE8E3;
+  border-radius: var(--radius-pill);
+  padding: 4px;
+  gap: 2px;
+  /* Responsif — tidak melebihi layar */
+  max-width: 100%;
+}
+
+.filterbar__photo-btn {
+  /* Touch-friendly: min 44px tinggi */
+  min-height: 44px;
+  padding: 0 24px;
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  background: transparent;
+  transition: background var(--transition), color var(--transition), box-shadow var(--transition);
+  white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.filterbar__photo-btn--active {
+  background: var(--color-navy);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(28, 43, 74, 0.25);
+}
+
+.filterbar__photo-btn:hover:not(.filterbar__photo-btn--active) {
+  color: var(--color-navy);
+  background: rgba(28, 43, 74, 0.08);
+}
+
+/* ── Pill kategori ── */
+.filterbar__category {
+  display: flex;
+  background: #EDE8E3;
+  border-radius: var(--radius-pill);
+  padding: 4px;
+  gap: 2px;
+  /* Responsif */
+  max-width: 100%;
+  flex-wrap: nowrap;
+}
+
+.filterbar__cat-btn {
+  /* Touch-friendly */
+  min-height: 44px;
+  padding: 0 20px;
+  border-radius: var(--radius-pill);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  background: transparent;
+  transition: background var(--transition), color var(--transition), box-shadow var(--transition);
+  white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.filterbar__cat-btn--active {
+  background: var(--color-rose);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(200, 149, 108, 0.35);
+}
+
+.filterbar__cat-btn:hover:not(.filterbar__cat-btn--active) {
+  color: var(--color-navy);
+  background: rgba(200, 149, 108, 0.12);
+}
+
+/* ── Deskripsi ── */
+.filterbar__desc {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  font-style: italic;
+  font-family: var(--font-serif);
+  letter-spacing: 0.01em;
+  text-align: center;
+}
+
+/* ── Tablet & Mobile ── */
+@media (max-width: 520px) {
+  .filterbar {
+    padding: 28px 12px 20px;
+    gap: 12px;
+  }
+
+  .filterbar__photo-btn {
+    padding: 0 16px;
+    font-size: 12px;
+    letter-spacing: 0.03em;
+  }
+
+  .filterbar__cat-btn {
+    padding: 0 14px;
+    font-size: 13px;
+  }
+
+  .filterbar__desc {
+    font-size: 13px;
+  }
+}
+
+/* ── Mobile sangat kecil (< 360px) ── */
+@media (max-width: 360px) {
+  .filterbar__photo-btn {
+    padding: 0 12px;
+    font-size: 11px;
+  }
+
+  .filterbar__cat-btn {
+    padding: 0 10px;
+    font-size: 12px;
+  }
+}
+
+/* ── Landscape HP ── */
+@media (max-width: 768px) and (orientation: landscape) {
+  .filterbar {
+    padding: 20px 16px 16px;
+    gap: 10px;
+  }
+}

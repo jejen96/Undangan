@@ -1,0 +1,158 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(247, 244, 241, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border);
+  /* Cegah overflow horizontal */
+  width: 100%;
+  overflow: hidden;
+}
+
+.navbar__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  /* override global a min-height */
+  min-height: unset;
+  flex-shrink: 0;
+}
+
+.navbar__logo-icon {
+  color: var(--color-rose);
+  font-size: 20px;
+  line-height: 1;
+}
+
+.navbar__logo-text {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--color-navy);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex: 1;
+  justify-content: center;
+}
+
+.navbar__link {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  transition: color var(--transition);
+  min-height: var(--tap-min);
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  /* override global a */
+  min-height: 44px;
+}
+
+.navbar__link:hover {
+  color: var(--color-navy);
+}
+
+.navbar__cta {
+  padding: 10px 20px;
+  background: var(--color-navy);
+  color: #fff;
+  border-radius: var(--radius-pill);
+  font-size: 14px;
+  font-weight: 500;
+  transition: background var(--transition), transform var(--transition);
+  white-space: nowrap;
+  flex-shrink: 0;
+  /* Touch friendly */
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.navbar__cta:hover {
+  background: var(--color-navy-light);
+  transform: translateY(-1px);
+}
+
+/* ── Tablet: sembunyikan links, tampilkan CTA ── */
+@media (max-width: 768px) {
+  .navbar__links {
+    display: none;
+  }
+
+  .navbar__inner {
+    padding: 0 16px;
+    height: 56px;
+  }
+
+  .navbar__logo-text {
+    font-size: 20px;
+  }
+
+  .navbar__cta {
+    font-size: 13px;
+    padding: 9px 16px;
+  }
+}
+
+/* ── Mobile kecil ── */
+/* ── User info saat sudah login ── */
+.navbar__user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.navbar__user-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-navy);
+  white-space: nowrap;
+}
+
+.navbar__logout {
+  padding: 8px 16px;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  background: transparent;
+  cursor: pointer;
+  transition: all var(--transition);
+  min-height: 36px;
+  white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.navbar__logout:hover {
+  border-color: var(--color-navy);
+  color: var(--color-navy);
+}
+
+@media (max-width: 480px) {
+  .navbar__user-name {
+    display: none;
+  }
+}

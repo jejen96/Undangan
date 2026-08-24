@@ -1,0 +1,90 @@
+.template-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* Cegah horizontal scroll di level page */
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* ── Template section ── */
+.template-section {
+  flex: 1;
+  width: 100%;
+}
+
+.template-section__header {
+  text-align: center;
+  /* Padding responsif */
+  padding: clamp(32px, 6vw, 56px) 20px 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.template-section__title {
+  font-family: var(--font-serif);
+  /* Fluid font size: min 24px, max 42px */
+  font-size: clamp(24px, 4.5vw, 42px);
+  font-weight: 500;
+  color: var(--color-navy);
+  line-height: 1.3;
+  margin-bottom: 12px;
+  /* Teks tidak overflow */
+  overflow-wrap: break-word;
+}
+
+.template-section__title em {
+  font-style: italic;
+  color: var(--color-rose);
+}
+
+.template-section__sub {
+  /* Minimal 14px agar mudah dibaca di HP */
+  font-size: clamp(14px, 2vw, 15px);
+  color: var(--color-text-muted);
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.75;
+}
+
+/* ── Footer ── */
+.footer {
+  background: var(--color-navy);
+  color: rgba(255,255,255,0.6);
+  text-align: center;
+  padding: clamp(24px, 4vw, 32px) 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.footer__text {
+  font-size: clamp(12px, 2vw, 13px);
+}
+
+.footer__tagline {
+  font-family: var(--font-serif);
+  font-size: clamp(13px, 2vw, 14px);
+  font-style: italic;
+  color: rgba(200, 149, 108, 0.7);
+}
+
+/* ── Mobile ── */
+@media (max-width: 480px) {
+  .template-section__header {
+    padding: 28px 16px 6px;
+  }
+
+  .template-section__sub {
+    font-size: 14px;
+  }
+}
+
+/* ── Landscape HP ── */
+@media (max-width: 768px) and (orientation: landscape) {
+  .template-section__header {
+    padding: 24px 20px 4px;
+  }
+}

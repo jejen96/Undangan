@@ -1,0 +1,98 @@
+.tgrid {
+  display: grid;
+  /* Desktop: 3 kolom */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px 60px;
+  animation: fadeIn 0.3s ease;
+  /* Cegah grid melebar melebihi viewport */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Tablet landscape / desktop kecil ── */
+@media (max-width: 1024px) {
+  .tgrid {
+    gap: 20px;
+    padding: 0 16px 52px;
+  }
+}
+
+/* ── Tablet portrait: 2 kolom ── */
+@media (max-width: 900px) {
+  .tgrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ── Mobile landscape: 2 kolom rapat ── */
+@media (max-width: 768px) and (orientation: landscape) {
+  .tgrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 0 16px 40px;
+  }
+}
+
+/* ── Mobile portrait: 1 kolom ── */
+@media (max-width: 540px) {
+  .tgrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 0 16px 48px;
+  }
+}
+
+/* ── Mobile landscape (tinggi layar kecil): 2 kolom ── */
+@media (max-height: 500px) and (orientation: landscape) {
+  .tgrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}
+
+/* ── State: loading / error / empty ── */
+.tgrid__state {
+  /* Span semua kolom */
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 64px 24px;
+  color: var(--color-text-muted);
+  font-size: 15px;
+  text-align: center;
+}
+
+.tgrid__state--error {
+  color: #c0392b;
+}
+
+.tgrid__empty-icon {
+  font-size: 36px;
+  color: var(--color-rose-light);
+}
+
+/* ── Spinner ── */
+.tgrid__spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--color-border);
+  border-top-color: var(--color-rose);
+  border-radius: 50%;
+  animation: spin 0.75s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

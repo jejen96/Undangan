@@ -1,0 +1,111 @@
+/* ===== Reset & Base ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Palet warna: Navy + Rose Gold / Dusty Mauve */
+  --color-bg:          #F7F4F1;
+  --color-bg-card:     #FFFFFF;
+  --color-navy:        #1C2B4A;
+  --color-navy-light:  #2D3F6B;
+  --color-rose:        #C8956C;
+  --color-rose-light:  #E4B48A;
+  --color-rose-pale:   #F5E6D8;
+  --color-mauve:       #9B7FA6;
+  --color-text:        #2C2C2C;
+  --color-text-muted:  #7A7A7A;
+  --color-border:      #E0D9D2;
+
+  --font-serif:  'Cormorant Garamond', Georgia, serif;
+  --font-sans:   'Inter', system-ui, sans-serif;
+
+  --radius-sm:  6px;
+  --radius-md:  12px;
+  --radius-lg:  20px;
+  --radius-pill: 9999px;
+
+  --shadow-card: 0 2px 16px rgba(28, 43, 74, 0.08);
+  --shadow-hover: 0 8px 32px rgba(28, 43, 74, 0.14);
+  --transition: 0.25s ease;
+
+  /* Touch-friendly minimum tap target */
+  --tap-min: 44px;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Cegah horizontal scroll global */
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  min-height: 100vh;
+  /* Cegah horizontal scroll */
+  overflow-x: hidden;
+  width: 100%;
+  /* Ukuran teks minimal untuk keterbacaan di HP */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+img {
+  display: block;
+  /* Gambar otomatis menyesuaikan kontainer */
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  /* Tap area minimal */
+  min-height: var(--tap-min);
+  display: inline-flex;
+  align-items: center;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: var(--font-sans);
+  /* Tap area minimal 44px untuk jari */
+  min-height: var(--tap-min);
+  /* Hapus tap highlight biru di mobile */
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+/* Prevent text overflow */
+p, h1, h2, h3, h4, h5, h6, span, li {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Input & select touch-friendly */
+input, select, textarea {
+  font-family: var(--font-sans);
+  font-size: 16px; /* Cegah auto-zoom di iOS */
+  min-height: var(--tap-min);
+  width: 100%;
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  border: 1.5px solid var(--color-border);
+  background: var(--color-bg-card);
+  color: var(--color-text);
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: 2px solid var(--color-rose);
+  outline-offset: 2px;
+  border-color: var(--color-rose);
+}
